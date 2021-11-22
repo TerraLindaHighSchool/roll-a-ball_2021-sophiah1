@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 0;
-    
+    public float speed = 10;
+
     private Rigidbody rb;
     private float movementX;
     private float movementY;
@@ -20,10 +20,9 @@ public class PlayerController : MonoBehaviour
     void OnMove(InputValue movementValue)
     {
         Vector2 movementVector = movementValue.Get<Vector2>();
-
         movementX = movementVector.x;
-        movementX = movementVector.y;
-
+        movementY = movementVector.y;
+       // Debug.Log(movementX);
     }
 
     private void FixedUpdate()
@@ -32,7 +31,4 @@ public class PlayerController : MonoBehaviour
 
         rb.AddForce(movement * speed);
     }
-}
-
-
 }
