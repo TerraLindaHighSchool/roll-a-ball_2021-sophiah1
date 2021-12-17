@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 		// Create a Vector3 variable, and assign X and Z to feature the horizontal and vertical float variables above
 		Vector3 movement = new Vector3(movementX, 0.0f, movementY);
 
-		rb.AddForce(movement * speed);
+		rb.AddForce(-movement * speed);
 	}
 
 	void OnTriggerEnter(Collider other)
